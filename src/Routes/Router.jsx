@@ -1,9 +1,14 @@
 import { createBrowserRouter } from "react-router";
 import HomelLayouts from "../Layouts/HomelLayouts";
 import Home from "../Components/Home";
-import AddCoffee from "../Components/AddCoffee";
-import UpDateCoffe from "../Components/UpDateCoffe";
-import MyPlants from "../Components/MyPlants";
+// import AddCoffee from "../Components/AddCoffee";
+// import UpDateCoffe from "../Components/UpDateCoffe";
+// import MyPlants from "../Components/MyPlants";
+import AllPlants from "../pages/AllPlants";
+import AddCoffees from "../pages/AddCoffees";
+import MyPlantss from "../pages/MyPlantss";
+import ViewDetails from "../pages/ViewDetails";
+import UpDateCoffe from "../pages/UpDateCoffe";
 
 const router = createBrowserRouter([
 
@@ -18,15 +23,27 @@ const router = createBrowserRouter([
                {
                 path: 'myplants',
                 loader: ()=> fetch('http://localhost:3000/coffees'),
-                Component: MyPlants
+                Component: MyPlantss,
             },
+             {
+                path: 'allplants',
+                loader: ()=> fetch('http://localhost:3000/coffees'),
+                Component: AllPlants,
+            },
+             {
+                path: 'coffee/:id',
+                loader: ({params}) => fetch(`http://localhost:3000/coffees/${params.id}`),
+                Component: ViewDetails,
+            },
+
             {
                 path: 'addplant',
-                Component: AddCoffee
+                Component: AddCoffees,
             },
                {
-                path: 'updateplant',
-                Component: UpDateCoffe
+                path: 'updateplant/:id',
+                 loader: ({params}) => fetch(`http://localhost:3000/coffees/${params.id}`),
+                Component: UpDateCoffe,
             },
         ]
     },

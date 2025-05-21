@@ -41,11 +41,11 @@ const Navber = () => {
         Home
       </a>
       <a
-        href="/MyBookings"
-        className={linkClass('/MyBookings')}
+        href="/allplants"
+        className={linkClass('/allplants')}
         onClick={(e) => {
           e.preventDefault();
-          handleNavigation('/MyBookings');
+          handleNavigation('/allplants');
         }}
       >
       All Plants

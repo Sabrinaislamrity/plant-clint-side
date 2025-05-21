@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router';
+// import { data } from 'react-router';
 import Swal from 'sweetalert2';
 
-const CoffeeCard = ({coffee}) => {
+const CoffeeCard = ({coffee, coffees, setCoffees}) => {
     const {_id,image, plantName,wateringFrequency,category} = coffee
+   console.log('aita image',image);
    
 
     const handleDelete = (_id) =>{
- console.log(_id);
+ 
  
  Swal.fire({
   title: "Are you sure?",
@@ -20,11 +23,31 @@ const CoffeeCard = ({coffee}) => {
     
     
   if (result.isConfirmed) {
-    // Swal.fire({
-    //   title: "Deleted!",
-    //   text: "Your file has been deleted.",
-    //   icon: "success"
-    // });
+
+    fetch(`http://localhost:3000/coffees/${_id}`,{
+        method: 'DELETE'
+    })
+    .then(res =>res.json())
+    .then(data => {
+        if (data.deletedCount) {
+             Swal.fire({
+      title: "Deleted!",
+      text: "Your Plant has been deleted.",
+      icon: "success"
+    });
+
+    const remainingCoffees = coffees.filter(cof => cof._id !== _id);
+    setCoffees(remainingCoffees);
+
+
+
+
+        }
+    })
+
+
+
+   
   }
 });
     }
@@ -45,8 +68,12 @@ const CoffeeCard = ({coffee}) => {
             <span className="font-semibold">Watering:</span> {wateringFrequency}
           </p>
           <div className="mt-4 flex justify-end gap-2">
+
+            <Link to={`/updateplant/${_id}`}>
+             <button className="btn btn-sm btn-outline btn-info">Update</button>
+            </Link>
             
-              <button className="btn btn-sm btn-outline btn-info">Update</button>
+              
             
             <button onClick={() => handleDelete(_id)}
               className="btn btn-sm btn-outline btn-error"

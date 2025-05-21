@@ -1,20 +1,20 @@
-import React from 'react';
-import { useLoaderData } from 'react-router';
-import CoffeeCard from './CoffeeCard';
+// import React from 'react';
+// import { useLoaderData } from 'react-router';
+// import CoffeeCard from './CoffeeCard';
 
-const MyPlants = () => {
-    const coffees = useLoaderData();
+// const MyPlants = () => {
+//     const coffees = useLoaderData();
     
     
-    return (
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {
-                coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
-            }
-          </div>
-        </div>
-    );
-};
+//     return (
+//         <div>
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+//               {
+//                 coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
+//             }
+//           </div>
+//         </div>
+//     );
+// };
 
-export default MyPlants;
+// export default MyPlants;

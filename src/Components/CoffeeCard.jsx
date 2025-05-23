@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 const CoffeeCard = ({coffee, coffees, setCoffees}) => {
     const {_id,image, plantName,wateringFrequency,category} = coffee
-   console.log('aita image',image);
+  //  console.log('aita image',image);
    
 
     const handleDelete = (_id) =>{

@@ -7,7 +7,7 @@ const AddCoffees = () => {
         const form = e.target;
         const formData = new FormData(form);
         const newCoffee = Object.fromEntries(formData.entries());
-        console.log(newCoffee);
+        // console.log(newCoffee);
          
         fetch('http://localhost:3000/coffees', {
             method: 'POST',
@@ -35,7 +35,7 @@ const AddCoffees = () => {
     
     return (
         <>
-      <div className="p-12 md:p-24">
+      <div className="p-12 md:p-24 max-w-7xl mx-auto">
         <div className="text-center mb-12 space-y-4">
           <h1 className="text-4xl font-bold text-green-700">Add Plant</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">

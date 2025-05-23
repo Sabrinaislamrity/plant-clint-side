@@ -6,11 +6,12 @@ import Footer from '../Components/Footer';
 const HomelLayouts = () => {
     return (
        <>
-       <div className=" max-w-7xl mx-auto">
+       <div className=" max-w-7xl mx-auto ">
         <Navber></Navber>
         
-        <Outlet ></Outlet>
+       {/* {import.meta.env.VITE_name} */}
        </div>
+        <Outlet  ></Outlet>
        <Footer></Footer>
        </>
     );

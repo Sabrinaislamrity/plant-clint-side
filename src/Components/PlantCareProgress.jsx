@@ -1,5 +1,6 @@
 import React from "react";
 import Farme from "../assets/Frame.png";
+import WateringAnimation from "./WateringAnimation";
 
 const PlantCareProgress = () => {
   return (
@@ -35,8 +36,12 @@ const PlantCareProgress = () => {
       <p className="text-green-700 text-lg leading-relaxed mt-6 font-semibold">
   Welcome to the Plant Care Tracker — your smart companion for growing healthier, happier plants. Whether you're a beginner or a seasoned plant lover, our app helps you stay on track with timely watering reminders, progress tracking, and personalized care cards. Monitor each plant’s health, follow your purchase journey, and enjoy a smooth care routine from registration to receiving your kit. Our mission is to promote sustainable, eco-friendly living while building a vibrant community of plant enthusiasts who care deeply about nature. Let’s grow together! 🌿
 </p>
-
+  {/* Now show a Lottie animation below slider */}
+      <h3 className="text-green-700 text-lg leading-relaxed mt-6 font-semibold">Visit Our Page</h3>
+      <WateringAnimation />
     </div>
+
+    
   );
 };
 

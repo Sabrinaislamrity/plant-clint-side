@@ -26,7 +26,7 @@ const PlantTipCard = () => {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto p-8 mt-28">
+    <div className="max-w-5xl mx-auto p-8 mt-20">
       <h2 className="text-3xl font-bold text-green-800 mb-6 text-center">
         🌞 Daily Plant Care Tips
       </h2>

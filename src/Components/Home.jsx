@@ -9,7 +9,7 @@ const Home = () => {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/coffees')
+    fetch('https://plant-store-server.vercel.app/coffees')
       .then(res => res.json())
       .then(data => setPlants(data))
       .catch(err => console.error("Failed to load plants:", err));

@@ -16,7 +16,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/coffees/${_id}`, {
+        fetch(`https://plant-store-server.vercel.app/coffees/${_id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())
@@ -32,25 +32,26 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   };
 
   const handleUpdate = () => {
+    // Replace this with window.location or modal logic if you aren't using React Router
     window.location.href = `/updateplant/${_id}`;
   };
 
   return (
     <>
-      <div className="max-w-md mx-auto mb-4">
-        <div className="card card-side bg-base-100 shadow-md rounded-2xl overflow-hidden border border-gray-200">
-          <figure className="w-1/3">
-            <img src={image} alt={plantName} className="object-cover h-full w-full" />
+      <div className="w-full max-w-md mx-auto mb-4 px-2">
+        <div className="flex flex-col md:flex-row bg-base-100 shadow-md rounded-2xl overflow-hidden border border-gray-200">
+          <figure className="md:w-1/3 w-full h-48 md:h-auto">
+            <img src={image} alt={plantName} className="object-cover w-full h-full" />
           </figure>
-          <div className="card-body p-4 w-2/3">
-            <h2 className="card-title text-xl font-semibold">{plantName}</h2>
+          <div className="card-body p-4 md:w-2/3 w-full">
+            <h2 className="card-title text-lg md:text-xl font-semibold">{plantName}</h2>
             <p className="text-gray-600 text-sm">
               <span className="font-semibold">Category:</span> {category}
             </p>
             <p className="text-gray-600 text-sm">
               <span className="font-semibold">Watering:</span> {wateringFrequency}
             </p>
-            <div className="mt-4 flex justify-end gap-2">
+            <div className="mt-4 flex flex-col sm:flex-row justify-end gap-2">
               <button
                 className="btn btn-sm btn-outline btn-info"
                 data-tooltip-id="tooltip"

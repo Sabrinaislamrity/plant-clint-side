@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             },
                {
                 path: 'myplants',
-                loader: ()=> fetch('http://localhost:3000/coffees'),
+                loader: ()=> fetch('https://plant-store-server.vercel.app/coffees'),
                 hydrateFallbackElement: <Loading></Loading>,
                 element: (
                    
@@ -42,13 +42,13 @@ const router = createBrowserRouter([
             
              {
                 path: 'allplants',
-                loader: ()=> fetch('http://localhost:3000/coffees'),
+                loader: ()=> fetch('https://plant-store-server.vercel.app/coffees'),
                  hydrateFallbackElement: <Loading></Loading>,
                 Component: AllPlants,
             },
              {
                 path: 'coffee/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/coffees/${params.id}`),
+                loader: ({params}) => fetch(`https://plant-store-server.vercel.app/coffees/${params.id}`),
                  hydrateFallbackElement: <Loading></Loading>,
                element: <PrivateRoute>
                 <ViewDetails></ViewDetails>
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
             },
                {
                 path: 'updateplant/:id',
-                 loader: ({params}) => fetch(`http://localhost:3000/coffees/${params.id}`),
+                 loader: ({params}) => fetch(`https://plant-store-server.vercel.app/coffees/${params.id}`),
                   hydrateFallbackElement: <Loading></Loading>,
                 Component: UpDateCoffe,
             },

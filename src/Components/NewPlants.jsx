@@ -23,7 +23,7 @@ const NewPlants = ({plant}) => {
           </div>
     <Link to={`/coffee/${_id}`}>
           <button className="mt-auto cursor-pointer text-sm font-semibold bg-gradient-to-r from-green-400 to-green-600 text-white px-4 py-2 rounded-full shadow hover:from-green-500 hover:to-green-700 transition">
-            View Details
+            See More
           </button>
     </Link>
         </div>

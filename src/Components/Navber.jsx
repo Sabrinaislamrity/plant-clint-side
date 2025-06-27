@@ -42,11 +42,16 @@ const Navber = () => {
       <a href="/allplants" className={linkClass('/allplants')} onClick={(e) => { e.preventDefault(); handleNavigation('/allplants'); }}>All Plants</a>
       <a href="/addplant" className={linkClass('/addplant')} onClick={(e) => { e.preventDefault(); handleNavigation('/addplant'); }}>Add Plant</a>
       <a href="/myplants" className={linkClass('/myplants')} onClick={(e) => { e.preventDefault(); handleNavigation('/myplants'); }}>My Plants</a>
+        <a href="/aboutus" className={linkClass('/aboutus')} onClick={(e) => { e.preventDefault(); handleNavigation('/aboutus'); }}>About us</a>
+         <a href="/dashboard" className={linkClass('/dashboard')} onClick={(e) => { e.preventDefault(); handleNavigation('/dashboard'); }}>Dash Board</a>
+        
+          <a href="/contact" className={linkClass('/contact')} onClick={(e) => { e.preventDefault(); handleNavigation('/contact'); }}>Contact</a>
     </>
   );
 
   return (
-    <div className="navbar relative z-20 bg-white dark:bg-gray-900 rounded-2xl border border-green-600">
+   <div className="navbar sticky top-0 z-50 bg-white dark:bg-gray-900 rounded-2xl border border-green-600">
+
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -96,7 +101,7 @@ const Navber = () => {
               className="relative group overflow-hidden px-6 py-2 border-2 border-green-600 bg-green-600 text-white rounded-lg shadow-md transition-all duration-300 ease-in-out hover:scale-105"
             >
               <span className="absolute left-0 top-0 h-full w-0 bg-green-800 transition-all duration-500 ease-in-out group-hover:w-full z-0"></span>
-              <span className="relative z-10">Log Out</span>
+              <span className="relative z-10">LogOut</span>
             </button>
 
             <button className="relative group overflow-hidden px-6 py-2 border-2 border-green-600 bg-white text-green-600 rounded-lg shadow-md transition-all duration-300 ease-in-out hover:scale-105">

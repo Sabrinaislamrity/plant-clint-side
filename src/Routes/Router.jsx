@@ -15,6 +15,10 @@ import Authlayout from "../Layouts/Authlayout";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
 import Error from "../pages/Error";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import Overview from "../Components/Overview";
 
 
 const router = createBrowserRouter([
@@ -40,12 +44,44 @@ const router = createBrowserRouter([
                 )
             },
             
+            
              {
                 path: 'allplants',
                 loader: ()=> fetch('https://plant-store-server.vercel.app/coffees'),
                  hydrateFallbackElement: <Loading></Loading>,
                 Component: AllPlants,
             },
+
+
+
+
+
+
+             {
+                path: 'aboutus',
+               
+                Component: About,
+            },
+
+
+             {
+                path: 'contact',
+               
+                Component: Contact,
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+
              {
                 path: 'coffee/:id',
                 loader: ({params}) => fetch(`https://plant-store-server.vercel.app/coffees/${params.id}`),
@@ -91,6 +127,33 @@ const router = createBrowserRouter([
         path:"/*",
         element:<Error></Error>
     },
+
+      {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <Overview />,
+      },
+      {
+        path: "allplants",
+        element: <AllPlants />,
+      },
+      {
+        path: "addplant",
+        element:   <AddCoffees></AddCoffees>,
+      },
+      {
+        path: "myplants",
+        element:  <MyPlantss></MyPlantss>,
+      },
+    ],
+  },
 
 
 

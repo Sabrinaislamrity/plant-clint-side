@@ -38,8 +38,8 @@ A full-stack web application that helps users manage and track the care routine 
 ---
 
 ## 📸 Screenshots
+<img width="1887" height="898" alt="plantcare" src="https://github.com/user-attachments/assets/e55ecbd9-74c7-46c7-a7ab-b0de48e6dd71" />
 
-> _Add screenshots here if you have them (you can use the GitHub Issues section to upload images and get a direct link)._
 
 ---
 
